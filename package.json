@@ -66,16 +66,18 @@
         "watch": "tsc -watch -p ./",
         "pretest": "npm run compile && npm run lint",
         "lint": "eslint src",
-        "test": "vscode-test"
+        "test": "vscode-test-runner --extensionDevelopmentPath=. --extensionTestsPath=out/test/extension.test.js"
     },
     "devDependencies": {
         "@types/mocha": "^10.0.10",
+        "@types/sinon": "^17.0.4",
         "@types/vscode": "^1.97.0",
         "@typescript-eslint/eslint-plugin": "^8.22.0",
         "@typescript-eslint/parser": "^8.22.0",
         "@vscode/test-cli": "^0.0.10",
         "@vscode/test-electron": "^2.4.1",
         "eslint": "^9.19.0",
+        "sinon": "^19.0.2",
         "typescript": "^5.7.3"
     },
     "dependencies": {

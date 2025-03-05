@@ -1485,3 +1485,5 @@ async function getCodeStatistics(cwd: string, branch?: string, author?: string, 
         };
     }
 }
+
+export { getGitInstance, normalizePath, getWorkspaces, isGitRepository, getCommitHistory, CodeStatistics, getCodeStatistics };
