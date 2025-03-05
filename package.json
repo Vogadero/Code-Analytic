@@ -1,0 +1,86 @@
+{
+    "name": "code-analytic",
+    "displayName": "Code Analytic",
+    "description": "Intelligent analysis of code volume",
+    "version": "0.0.1",
+    "publisher": "Vogadero",
+    "engines": {
+        "vscode": "^1.97.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "Code Analytic",
+            "properties": {
+                "codeAnalytic.gitPath": {
+                    "type": "string",
+                    "default": "git",
+                    "description": "自定义Git可执行文件路径"
+                }
+            }
+        },
+        "viewsContainers": {
+            "activitybar": [
+                {
+                    "id": "code-analytic",
+                    "title": "Code Analytic",
+                    "icon": "images/analytic.svg"
+                }
+            ]
+        },
+        "views": {
+            "code-analytic": [
+                {
+                    "id": "code-analytic.configView",
+                    "name": "代码分析",
+                    "type": "webview"
+                }
+            ]
+        }
+    },
+    "capabilities": {
+        "virtualWorkspaces": true,
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Vogadero/code-analytic"
+    },
+    "bugs": {
+        "url": "https://github.com/Vogadero/code-analytic/issues"
+    },
+    "homepage": "https://github.com/Vogadero/code-analytic#readme",
+    "license": "MIT",
+    "icon": "images/analytic.png",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src",
+        "test": "vscode-test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^10.0.10",
+        "@types/vscode": "^1.97.0",
+        "@typescript-eslint/eslint-plugin": "^8.22.0",
+        "@typescript-eslint/parser": "^8.22.0",
+        "@vscode/test-cli": "^0.0.10",
+        "@vscode/test-electron": "^2.4.1",
+        "eslint": "^9.19.0",
+        "typescript": "^5.7.3"
+    },
+    "dependencies": {
+        "@types/git": "^0.0.21",
+        "@types/node": "^22.13.8",
+        "simple-git": "^3.27.0"
+    }
+}
