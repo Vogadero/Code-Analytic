@@ -82,7 +82,7 @@
     },
     "dependencies": {
         "@types/git": "^0.0.21",
-        "@types/node": "^22.13.8",
+        "@types/node": "^22.15.2",
         "simple-git": "^3.27.0"
     }
 }
